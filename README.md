@@ -13,8 +13,7 @@ The code should be changed is on line 1574----1586
 
 We should change the code as follows.
   
-  <code>
-  public function getOauthCodeUrl($callback, $state = '') {
+public function getOauthCodeUrl($callback, $state = '') {
 	    if ($this->account['key'] == 'wx9d1b2a31f4ad0da4') {
 	        return "http://www.hzchuangxiangzhe.cn/codetoany/getcode.php?auk=w&partUrl=".base64_encode(str_replace(array('http://wengine.zhedacxz.com'), '', urldecode($callback)))."&state={$state}";
         }
@@ -27,6 +26,5 @@ We should change the code as follows.
         }
 		return "https://open.weixin.qq.com/connect/oauth2/authorize?appid={$this->account['key']}&redirect_uri={$callback}&response_type=code&scope=snsapi_userinfo&state={$state}#wechat_redirect";
 	}
-  </code>
   
   $this->account['key'] is our weixin appkey.
